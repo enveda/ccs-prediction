@@ -46,3 +46,14 @@ Train the model based on your own training dataset with [wrapper_train] and pred
 The baseline original repositories are:
 - SigmaCCS: https://github.com/zmzhang/SigmaCCS
 - GraphCCS: https://github.com/tingxiecsu/GraphCCS
+
+## References
+>  Ross, D. H., Cho, J. H., and Xu, L. (2020). Breaking down structural diversity for comprehensive prediction of ion-neutral collision cross sections. Analytical chemistry, 92(6), 4548-4557. https://doi.org/10.1021/acs.analchem.9b05772
+
+> Baker, E. S., Hoang, C., Uritboonthai, W., Heyman, H. M., Pratt, B., MacCoss, M., et al. (2023). METLIN-CCS: an ion mobility spectrometry collision cross section database. Nature methods, 20(12), 1836-1837. https://doi.org/10.1038/s41592-023-02078-5
+
+> Guo, R., Zhang, Y., Liao, Y., Yang, Q., Xie, T., Fan, X., et al. (2023). Highly accurate and large-scale collision cross sections prediction with graph neural networks. Communications Chemistry, 6(1), 139. https://doi.org/10.1038/s42004-023-00939-w
+
+> Xie, T., Yang, Q., Sun, J., Zhang, H., Wang, Y., and Lu, H. Large-Scale Prediction of Collision Cross-Section with Graph Convolutional Network for Compound Identification.
+
+
