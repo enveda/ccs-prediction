@@ -40,8 +40,8 @@ There are two folders:
 Predictions are available and can be directly downloaded from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11199061.svg)](https://doi.org/10.5281/zenodo.11199061). The files should be unzipped and placed in the `data` directory.
 
 The original datasets are available here:
-CCSBase: https://ccsbase.net/query
-Metlin: https://metlin.scripps.edu/
+- CCSBase: https://ccsbase.net/query
+- Metlin: https://metlin.scripps.edu/
 
 
 ## Predicting CCS
