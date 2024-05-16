@@ -39,6 +39,10 @@ There are two folders:
 
 Predictions are available and can be directly downloaded from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11199061.svg)](https://doi.org/10.5281/zenodo.11199061). The files should be unzipped and placed in the `data` directory.
 
+The original datasets are available here:
+CCSBase: https://ccsbase.net/query
+Metlin: https://metlin.scripps.edu/
+
 
 ## Predicting CCS
 Train the model based on your own training dataset with [wrapper_train] and predict with [wrapper_predict](mol2ccs/train_and_predict.py#L23) function.
