@@ -12,7 +12,7 @@ This repository contains code and data described in detail in our paper (Engler 
 If you have found our manuscript useful in your work, please consider citing:
 
 >  Engler Hart*, C., Preto*, A. J., Chanana*, S., Healey, D., Kind, T., Domingo-Fernandez, D. (2024).
-Evaluating the generalizability of graph neural networks for predicting collision cross section. *bioRxiv*.
+Evaluating the generalizability of graph neural networks for predicting collision cross section. *Chemrxiv*.
 
 ## Reproducibility
 
@@ -37,7 +37,7 @@ There are two folders:
 
 ## Data
 
-Datasets and predictions are available and can be directly downloaded from [![DOI](https://zenodo.org/badge/DOI/)](https://doi.org/). The files should be unzipped and placed in the `data` directory.
+Predictions are available and can be directly downloaded from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11199061.svg)](https://doi.org/10.5281/zenodo.11199061). The files should be unzipped and placed in the `data` directory.
 
 
 ## Predicting CCS
