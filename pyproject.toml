@@ -10,7 +10,7 @@ packages = [{ include = "mol2ccs" }]
 python = "~3.9"
 spektral = "^1.3.0"
 umap-learn = "^0.5.5"
-tqdm = "^4.66.1"
+tqdm = "^4.66.3"
 rdkit = "^2023.9.4"
 awswrangler = "^3.4.2"
 # Tensorflow Poetry and Pip all hate each other apparently. There were some problems and this comment solved them.
