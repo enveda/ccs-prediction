@@ -64,7 +64,7 @@ poetry run python scripts/train-test.py \
 
 Run the notebooks located in the `notebooks` corresponding to each analysis.
 There are two folders:
-- data_processing: notebooks to process the METLIN-CCS and CCSBase and make the data splits
+- data_processing: notebooks to process the METLIN-CCS and CCSBase and make the data splits. Note that you have to download the two databases according to their licenses and modify the paths/names on the notebooks.
 - reproduce_figures: the name of the notebooks indicates which notebook can reproduce which figures of the manuscript manuscript.
 - exploring_predictions: notebooks to explore the predictions of the models in detail
 
@@ -75,7 +75,7 @@ Predictions are available and can be directly downloaded from [![DOI](https://ze
 The original datasets are available here:
 - CCSBase: https://ccsbase.net/query
 - Metlin: https://metlin.scripps.edu/
-
+Each user should download the raw database (as excel/csv) and read them in the two notebooks for each database located at https://github.com/enveda/ccs-prediction/tree/main/notebooks/data_processing. Each notebook reads the csv/excel and formats it according to the input of Mol2CCS.
 
 ## Predicting CCS
 Train the model based on your own training dataset with [wrapper_train] and predict with [wrapper_predict](mol2ccs/train_and_predict.py#L23) function.
