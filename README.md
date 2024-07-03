@@ -27,6 +27,39 @@ poetry run pre-commit install
 
 See the commands in the `Makefile` to train the models. Run them as `make train-metlin-test-metlin`
 
+```python
+
+poetry run python scripts/train-test.py \
+	--prefix "train-metlin-test-ccsbase" \
+	--train-input-file "ccs-prediction/metlin_train_3d.parquet" \
+	--test-input-file "ccs-prediction/ccsbase_3d.parquet" \
+	--parameter-path "parameter/parameter-train-metlin-test-metlin.json" \
+	--model-output-file "model/train-metlin-test-metlin.h5" \
+	--coordinates-column-name "coordinates" \
+	--coordinates-present \
+	--smiles-column-name "smiles" \
+	--adduct-column-name "adduct" \
+	--ccs-column-name "ccs" \
+	--dropout-rate 0.1 \
+	--epochs 400 \
+	> train-metlin-test-ccsbase.out 2>&1
+
+```
+- **prefix** is used to generate the output files of the predictions of the test set
+- **train-input-file** is the training set (see notebooks/data_processing/2_data_splits.ipynb for details on the format)/
+- **test-input-file** test set (see notebooks/data_processing/2_data_splits.ipynb for details on the format)
+- **parameter-path** path to the file generated storing the parameters of the model
+- **parameter-path** path to the file generated storing the parameters of the model
+- **model-output-file** path to the model file
+- **coordinates-column-name** column name of the 3d coordinates for each smiles
+- **coordinates-present** if the coordinates are present (if not given, the model will use the smiles to generate the 3d coordinates)
+- **smiles-column-name** column name of the smiles
+- **adduct-column-name** column name of the adduct
+- **ccs-column-name** column name of the ccs
+- **dropout-rate** dropout rate of the model
+- **epochs** number of epochs to train the model
+
+
 ### Reproduce results
 
 Run the notebooks located in the `notebooks` corresponding to each analysis.
