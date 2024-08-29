@@ -12,7 +12,7 @@ This repository contains code and data described in detail in our paper (Engler 
 If you have found our manuscript useful in your work, please consider citing:
 
 >  Engler Hart*, C., Preto*, A. J., Chanana*, S., Healey, D., Kind, T., Domingo-Fernandez, D. (2024).
-Evaluating the generalizability of graph neural networks for predicting collision cross section. *bioRxiv*.
+Evaluating the generalizability of graph neural networks for predicting collision cross section. *Journal of Cheminformatics*, 16 (105), 2024. https://doi.org/10.1186/s13321-024-00899-w
 
 ## Reproducibility
 
@@ -27,18 +27,55 @@ poetry run pre-commit install
 
 See the commands in the `Makefile` to train the models. Run them as `make train-metlin-test-metlin`
 
+```python
+
+poetry run python scripts/train-test.py \
+	--prefix "train-metlin-test-ccsbase" \
+	--train-input-file "ccs-prediction/metlin_train_3d.parquet" \
+	--test-input-file "ccs-prediction/ccsbase_3d.parquet" \
+	--parameter-path "parameter/parameter-train-metlin-test-metlin.json" \
+	--model-output-file "model/train-metlin-test-metlin.h5" \
+	--coordinates-column-name "coordinates" \
+	--coordinates-present \
+	--smiles-column-name "smiles" \
+	--adduct-column-name "adduct" \
+	--ccs-column-name "ccs" \
+	--dropout-rate 0.1 \
+	--epochs 400 \
+	> train-metlin-test-ccsbase.out 2>&1
+
+```
+- **prefix** is used to generate the output files of the predictions of the test set
+- **train-input-file** is the training set (see notebooks/data_processing/2_data_splits.ipynb for details on the format)/
+- **test-input-file** test set (see notebooks/data_processing/2_data_splits.ipynb for details on the format)
+- **parameter-path** path to the file generated storing the parameters of the model
+- **parameter-path** path to the file generated storing the parameters of the model
+- **model-output-file** path to the model file
+- **coordinates-column-name** column name of the 3d coordinates for each smiles
+- **coordinates-present** if the coordinates are present (if not given, the model will use the smiles to generate the 3d coordinates)
+- **smiles-column-name** column name of the smiles
+- **adduct-column-name** column name of the adduct
+- **ccs-column-name** column name of the ccs
+- **dropout-rate** dropout rate of the model
+- **epochs** number of epochs to train the model
+
+
 ### Reproduce results
 
 Run the notebooks located in the `notebooks` corresponding to each analysis.
 There are two folders:
-- data_processing: notebooks to process the METLIN-CCS and CCSBase and make the data splits
+- data_processing: notebooks to process the METLIN-CCS and CCSBase and make the data splits. Note that you have to download the two databases according to their licenses and modify the paths/names on the notebooks.
 - reproduce_figures: the name of the notebooks indicates which notebook can reproduce which figures of the manuscript manuscript.
 - exploring_predictions: notebooks to explore the predictions of the models in detail
 
 ## Data
 
-Datasets and predictions are available and can be directly downloaded from [![DOI](https://zenodo.org/badge/DOI/)](https://doi.org/). The files should be unzipped and placed in the `data` directory.
+Predictions are available and can be directly downloaded from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11199061.svg)](https://doi.org/10.5281/zenodo.11199061). The files should be unzipped and placed in the `data` directory.
 
+The original datasets are available here:
+- CCSBase: https://ccsbase.net/query
+- Metlin: https://metlin.scripps.edu/
+Each user should download the raw database (as excel/csv) and read them in the two notebooks for each database located at https://github.com/enveda/ccs-prediction/tree/main/notebooks/data_processing. Each notebook reads the csv/excel and formats it according to the input of Mol2CCS.
 
 ## Predicting CCS
 Train the model based on your own training dataset with [wrapper_train] and predict with [wrapper_predict](mol2ccs/train_and_predict.py#L23) function.

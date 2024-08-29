@@ -263,11 +263,8 @@ class RFStructureConfidenceModel:
             data,
             pred_ccs_col=self.pred_ccs_field,
         )
-        feature_df = smiles_features.join(adduct_features)
-        feature_df = feature_df.join(prediction_features)
-        feature_df = feature_df.join(ccs_type_features)
-        feature_df = feature_df.join(mol_type_features)
-        feature_df = feature_df.join(dimer_features)
+
+        feature_df = pd.concat([smiles_features, adduct_features, prediction_features, ccs_type_features, mol_type_features, dimer_features], axis=1)
 
         # Ensure there are no NaNs in the feature matrix
         assert not feature_df.isna().any().any(), "NaNs found in feature matrix"
