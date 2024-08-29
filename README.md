@@ -12,7 +12,7 @@ This repository contains code and data described in detail in our paper (Engler 
 If you have found our manuscript useful in your work, please consider citing:
 
 >  Engler Hart*, C., Preto*, A. J., Chanana*, S., Healey, D., Kind, T., Domingo-Fernandez, D. (2024).
-Evaluating the generalizability of graph neural networks for predicting collision cross section. *ChemRxiv*. https://doi.org/10.26434/chemrxiv-2024-32j2t
+Evaluating the generalizability of graph neural networks for predicting collision cross section. *Journal of Cheminformatics*, 16 (105), 2024. https://doi.org/10.1186/s13321-024-00899-w
 
 ## Reproducibility
 
